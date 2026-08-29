@@ -6,7 +6,7 @@
 <title>Waterfox Themes Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
@@ -26,19 +26,6 @@
 <div class="viewport">
 <div class="slider-track" id="sliderTrack">
 
-<div class="card-item" data-img="assets/one.webp">
-<div class="card-inner">
-<div class="card-media">
-<div class="glint-effect"></div>
-<span class="badge-soon">SOON</span>
-</div>
-<div class="card-footer">
-<span class="card-name">Тема 01</span>
-<span class="card-status">Preview</span>
-</div>
-</div>
-</div>
-
 <div class="card-item" data-img="assets/two.webp">
 <div class="card-inner">
 <div class="card-media">
@@ -46,7 +33,20 @@
 <span class="badge-soon">SOON</span>
 </div>
 <div class="card-footer">
-<span class="card-name">Тема 02</span>
+<span class="card-name">Абстракция</span>
+<span class="card-status">Preview</span>
+</div>
+</div>
+</div>
+
+<div class="card-item" data-img="assets/one.webp">
+<div class="card-inner">
+<div class="card-media">
+<div class="glint-effect"></div>
+<span class="badge-soon">SOON</span>
+</div>
+<div class="card-footer">
+<span class="card-name">Неон</span>
 <span class="card-status">Preview</span>
 </div>
 </div>
@@ -59,7 +59,7 @@
 <span class="badge-soon">SOON</span>
 </div>
 <div class="card-footer">
-<span class="card-name">Тема 03</span>
+<span class="card-name">Киберпанк</span>
 <span class="card-status">Preview</span>
 </div>
 </div>
@@ -104,10 +104,12 @@ lb.classList.add('visible');
 });
 
 card.addEventListener('mousemove', (e) => {
+if (window.innerWidth > 768) {
 const rect = card.getBoundingClientRect();
 const x = e.clientX - rect.left - rect.width / 2;
 const y = e.clientY - rect.top - rect.height / 2;
 card.style.transform = `perspective(1000px) rotateY(${x / 20}deg) rotateX(${-y / 20}deg) translateY(-8px)`;
+}
 });
 
 card.addEventListener('mouseleave', () => {
