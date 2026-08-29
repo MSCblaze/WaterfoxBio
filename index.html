@@ -12,19 +12,22 @@
         <h1 class="main-title">Black Theme</h1>
     </header>
     <main>
+        <div class="theme-title-container">
+            <div class="theme-title" id="themeTitle">Monochrome Mountains</div>
+        </div>
         <section class="carousel-container">
             <button class="nav-btn prev" id="prevBtn">&lt;</button>
             <div class="carousel-track-container">
                 <div class="carousel-track" id="track">
-                    <div class="card">
-                        <img src="assets/one.webp" alt="Card 1" onerror="this.remove(); this.parentElement.classList.add('fallback');">
+                    <div class="card" data-title="Monochrome Mountains">
+                        <img src="assets/one.webp" alt="Monochrome Mountains" onerror="this.remove(); this.parentElement.classList.add('fallback');">
                         <div class="fallback-text">Soon...</div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-title="Soon...">
                         <img src="assets/two.webp" alt="Card 2" onerror="this.remove(); this.parentElement.classList.add('fallback');">
                         <div class="fallback-text">Soon...</div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-title="Soon...">
                         <img src="assets/three.webp" alt="Card 3" onerror="this.remove(); this.parentElement.classList.add('fallback');">
                         <div class="fallback-text">Soon...</div>
                     </div>
@@ -37,18 +40,13 @@
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">01</div>
-                    <h3 class="step-title">Скачивание</h3>
-                    <p class="step-text">Скачайте архив chrome.zip и распакуйте папку chrome.</p>
+                    <h3 class="step-title">Получение файлов</h3>
+                    <p class="step-text">После оплаты вы получаете закрытый архив со всеми необходимыми файлами вашей будущей темы.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">02</div>
-                    <h3 class="step-title">Настройка браузера</h3>
-                    <p class="step-text">Откройте Waterfox, перейдите в about:config и включите toolkit.legacyUserProfileCustomizations.stylesheets на true.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <h3 class="step-title">Импорт</h3>
-                    <p class="step-text">Перейдите в about:support, нажмите «Открыть папку профиля» и перенесите туда папку chrome. Перезапустите браузер.</p>
+                    <h3 class="step-title">Установка</h3>
+                    <p class="step-text">Вам нужно будет просто перенести все файлы из архива в папку профиля вашего браузера по короткой инструкции. Подробный разбор и помощь — сразу при покупке лота.</p>
                 </div>
             </div>
         </section>
@@ -58,6 +56,7 @@
         const cards = Array.from(track.children);
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const themeTitle = document.getElementById('themeTitle');
         let currentIndex = 0;
         function updateCarousel() {
             cards.forEach((card, index) => {
@@ -73,6 +72,11 @@
                     card.classList.add('hidden');
                 }
             });
+            themeTitle.style.opacity = '0';
+            setTimeout(() => {
+                themeTitle.textContent = cards[currentIndex].getAttribute('data-title');
+                themeTitle.style.opacity = '1';
+            }, 200);
         }
         nextBtn.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % cards.length;
