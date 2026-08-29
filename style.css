@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12091c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b1c59;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #592986;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #3b1c59 #12091c;
+}
+
+body {
+    background-color: #12091c;
+    color: #e2d9ee;
+    font-family: monospace, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 40px 10%;
+    border-bottom: 2px solid #231238;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #e2d9ee;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    flex-grow: 1;
+}
+
+.carousel-section {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.slide {
+    flex: 0 0 65%;
+    background: #1c0e2d;
+    border: 1px solid #3b1c59;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background: #1c0e2d;
+    border: 1px solid #3b1c59;
+    color: #e2d9ee;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background: #3b1c59;
+}
+
+.btn:active {
+    background: #592986;
+}
+
+.instructions {
+    border-top: 2px solid #231238;
+    padding-top: 60px;
+}
+
+.section-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: #e2d9ee;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.step {
+    background: #1c0e2d;
+    border: 1px solid #231238;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.step-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: #592986;
+}
+
+.step-content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.step-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #9a88b0;
+}
