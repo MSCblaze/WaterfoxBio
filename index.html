@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-glow nebula-1"></div>
-    <div class="background-glow nebula-2"></div>
+    <div class="bg-nebula nebula-1"></div>
+    <div class="bg-nebula nebula-2"></div>
+    <div class="bg-nebula nebula-3"></div>
     <main>
         <div class="header-container">
             <h1 class="main-title" id="themeTitle">Monochrome Mountains</h1>
@@ -36,7 +37,7 @@
         <section class="instructions-section">
             <h2 class="section-title">УСТАНОВКА ТЕМЫ</h2>
             <div class="monolith-card">
-                <p class="monolith-text">Все файлы кастомизации передаются в закрытом архиве сразу после завершения и проверки работы. Подробная пошаговая инструкция по установке предоставляется при покупке лота.</p>
+                <p class="monolith-text">Полный гайд и файлы кастомизации выдаются сразу по завершении работы над вашей индивидуальной сборкой. Вы получите закрытый архив и простую пошаговую инструкцию по установке.</p>
             </div>
         </section>
     </main>
@@ -64,7 +65,13 @@
             themeTitle.style.opacity = '0';
             themeTitle.style.transform = 'translateY(-10px)';
             setTimeout(() => {
-                themeTitle.textContent = cards[currentIndex].getAttribute('data-title');
+                const currentTitle = cards[currentIndex].getAttribute('data-title');
+                themeTitle.textContent = currentTitle;
+                if (currentTitle === 'Soon...') {
+                    themeTitle.classList.add('silver-mode');
+                } else {
+                    themeTitle.classList.remove('silver-mode');
+                }
                 themeTitle.style.opacity = '1';
                 themeTitle.style.transform = 'translateY(0)';
             }, 200);
