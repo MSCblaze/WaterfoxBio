@@ -9,11 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
+<body>
 
 <header>
 <div class="brand">WATERFOX<span>THEMES</span></div>
-<button id="themeToggle" class="theme-btn">Сменить тему</button>
 </header>
 
 <main>
@@ -124,11 +123,6 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
 if(e.target.id === 'lightbox') {
 document.getElementById('lightbox').classList.remove('visible');
 }
-});
-
-document.getElementById('themeToggle').addEventListener('click', () => {
-document.body.classList.toggle('dark-theme');
-document.body.classList.toggle('light-theme');
 });
 </script>
 </body>
