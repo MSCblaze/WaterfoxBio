@@ -3,88 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
+    <title>Black Theme</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="header">
-        <div class="logo">PORTFOLIO</div>
+    <div class="background-glow"></div>
+    <header>
+        <h1 class="main-title">Black Theme</h1>
     </header>
-
-    <main class="container">
-        <section class="carousel-section">
-            <div class="carousel-viewport">
+    <main>
+        <section class="carousel-container">
+            <button class="nav-btn prev" id="prevBtn">&lt;</button>
+            <div class="carousel-track-container">
                 <div class="carousel-track" id="track">
-                    <div class="slide">
-                        <img src="assets/one.png" alt="Work 1">
+                    <div class="card">
+                        <img src="assets/one.webp" alt="Card 1" onerror="this.remove(); this.parentElement.classList.add('fallback');">
+                        <div class="fallback-text">Soon...</div>
                     </div>
-                    <div class="slide">
-                        <img src="assets/two.png" alt="Work 2">
+                    <div class="card">
+                        <img src="assets/two.webp" alt="Card 2" onerror="this.remove(); this.parentElement.classList.add('fallback');">
+                        <div class="fallback-text">Soon...</div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/three.webp" alt="Card 3" onerror="this.remove(); this.parentElement.classList.add('fallback');">
+                        <div class="fallback-text">Soon...</div>
                     </div>
                 </div>
             </div>
-            <div class="controls">
-                <button class="btn" id="prevBtn" aria-label="Previous">&larr;</button>
-                <button class="btn" id="nextBtn" aria-label="Next">&rarr;</button>
-            </div>
+            <button class="nav-btn next" id="nextBtn">&gt;</button>
         </section>
-
-        <section class="instructions">
-            <h2 class="section-title">Установка темы</h2>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-num">01</span>
-                    <div class="step-content">
-                        <h3>Скачивание</h3>
-                        <p>Загрузите архив с файлами темы из официального репозитория на ваш компьютер.</p>
-                    </div>
+        <section class="instructions-section">
+            <h2 class="section-title">УСТАНОВКА ТЕМЫ</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Скачивание</h3>
+                    <p class="step-text">Скачайте архив chrome.zip и распакуйте папку chrome.</p>
                 </div>
-                <div class="step">
-                    <span class="step-num">02</span>
-                    <div class="step-content">
-                        <h3>Настройки браузера</h3>
-                        <p>Откройте браузер, перейдите в раздел расширений и включите режим разработчика.</p>
-                    </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Настройка браузера</h3>
+                    <p class="step-text">Откройте Waterfox, перейдите в about:config и включите toolkit.legacyUserProfileCustomizations.stylesheets на true.</p>
                 </div>
-                <div class="step">
-                    <span class="step-num">03</span>
-                    <div class="step-content">
-                        <h3>Импорт</h3>
-                        <p>Перетащите распакованную папку в окно браузера для завершения установки.</p>
-                    </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Импорт</h3>
+                    <p class="step-text">Перейдите в about:support, нажмите «Открыть папку профиля» и перенесите туда папку chrome. Перезапустите браузер.</p>
                 </div>
             </div>
         </section>
     </main>
-
     <script>
         const track = document.getElementById('track');
+        const cards = Array.from(track.children);
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        let index = 0;
-
-        function updateSlider() {
-            if (index === 0) {
-                track.style.transform = 'translateX(0)';
-            } else {
-                track.style.transform = 'translateX(calc(-65% - 20px))';
-            }
+        let currentIndex = 0;
+        function updateCarousel() {
+            cards.forEach((card, index) => {
+                card.classList.remove('active', 'left', 'right', 'hidden');
+                let diff = index - currentIndex;
+                if (diff === 0) {
+                    card.classList.add('active');
+                } else if (diff === -1 || (currentIndex === 0 && index === cards.length - 1)) {
+                    card.classList.add('left');
+                } else if (diff === 1 || (currentIndex === cards.length - 1 && index === 0)) {
+                    card.classList.add('right');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         }
-
         nextBtn.addEventListener('click', () => {
-            if (index < 1) {
-                index++;
-                updateSlider();
-            }
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateCarousel();
         });
-
         prevBtn.addEventListener('click', () => {
-            if (index > 0) {
-                index--;
-                updateSlider();
-            }
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            updateCarousel();
         });
+        updateCarousel();
     </script>
 </body>
 </html>
