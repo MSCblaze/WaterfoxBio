@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Theme</title>
+    <title>Theme Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-glow"></div>
-    <header>
-        <h1 class="main-title">Black Theme</h1>
-    </header>
+    <div class="background-glow nebula-1"></div>
+    <div class="background-glow nebula-2"></div>
     <main>
-        <div class="theme-title-container">
-            <div class="theme-title" id="themeTitle">Monochrome Mountains</div>
+        <div class="header-container">
+            <h1 class="main-title" id="themeTitle">Monochrome Mountains</h1>
         </div>
         <section class="carousel-container">
             <button class="nav-btn prev" id="prevBtn">&lt;</button>
@@ -37,17 +35,8 @@
         </section>
         <section class="instructions-section">
             <h2 class="section-title">УСТАНОВКА ТЕМЫ</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h3 class="step-title">Получение файлов</h3>
-                    <p class="step-text">После оплаты вы получаете закрытый архив со всеми необходимыми файлами вашей будущей темы.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h3 class="step-title">Установка</h3>
-                    <p class="step-text">Вам нужно будет просто перенести все файлы из архива в папку профиля вашего браузера по короткой инструкции. Подробный разбор и помощь — сразу при покупке лота.</p>
-                </div>
+            <div class="monolith-card">
+                <p class="monolith-text">Все файлы кастомизации передаются в закрытом архиве сразу после завершения и проверки работы. Подробная пошаговая инструкция по установке предоставляется при покупке лота.</p>
             </div>
         </section>
     </main>
@@ -73,9 +62,11 @@
                 }
             });
             themeTitle.style.opacity = '0';
+            themeTitle.style.transform = 'translateY(-10px)';
             setTimeout(() => {
                 themeTitle.textContent = cards[currentIndex].getAttribute('data-title');
                 themeTitle.style.opacity = '1';
+                themeTitle.style.transform = 'translateY(0)';
             }, 200);
         }
         nextBtn.addEventListener('click', () => {
