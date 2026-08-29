@@ -11,7 +11,11 @@
 </head>
 <body class="dark-theme">
 
-    <div class="bg-glow"></div>
+    <div class="waves-bg">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
 
     <header>
         <div class="brand">WATERFOX<span>THEMES</span></div>
@@ -21,7 +25,7 @@
     <main>
         <section class="intro">
             <h1>Кастомные темы для Waterfox</h1>
-            <p>Эксклюзивный интерфейс, динамика и серебряный стиль</p>
+            <p>Портфолио тем</p>
         </section>
 
         <section class="showcase">
@@ -33,6 +37,7 @@
                     <div class="card-item" data-img="assets/one.webp">
                         <div class="card-inner">
                             <div class="card-media">
+                                <div class="glint-effect"></div>
                                 <span class="badge-soon">SOON</span>
                             </div>
                             <div class="card-footer">
@@ -45,6 +50,7 @@
                     <div class="card-item" data-img="assets/two.webp">
                         <div class="card-inner">
                             <div class="card-media">
+                                <div class="glint-effect"></div>
                                 <span class="badge-soon">SOON</span>
                             </div>
                             <div class="card-footer">
@@ -57,6 +63,7 @@
                     <div class="card-item" data-img="assets/three.webp">
                         <div class="card-inner">
                             <div class="card-media">
+                                <div class="glint-effect"></div>
                                 <span class="badge-soon">SOON</span>
                             </div>
                             <div class="card-footer">
@@ -69,6 +76,7 @@
                     <div class="card-item" data-img="assets/four.webp">
                         <div class="card-inner">
                             <div class="card-media">
+                                <div class="glint-effect"></div>
                                 <span class="badge-soon">SOON</span>
                             </div>
                             <div class="card-footer">
@@ -81,6 +89,7 @@
                     <div class="card-item" data-img="assets/five.webp">
                         <div class="card-inner">
                             <div class="card-media">
+                                <div class="glint-effect"></div>
                                 <span class="badge-soon">SOON</span>
                             </div>
                             <div class="card-footer">
@@ -174,12 +183,28 @@
         }
 
         next.addEventListener('click', () => {
-            index++;
+            const total = cards.length;
+            const visible = getVisibleCount();
+            const maxIndex = total - visible;
+            
+            if (index < maxIndex) {
+                index++;
+            } else {
+                index = 0;
+            }
             slide();
         });
 
         prev.addEventListener('click', () => {
-            index--;
+            const total = cards.length;
+            const visible = getVisibleCount();
+            const maxIndex = total - visible;
+
+            if (index > 0) {
+                index--;
+            } else {
+                index = maxIndex < 0 ? 0 : maxIndex;
+            }
             slide();
         });
 
