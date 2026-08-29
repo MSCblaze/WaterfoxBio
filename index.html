@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Waterfox Themes Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='2' y1='12' x2='22' y2='12'/><path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
@@ -20,6 +21,26 @@
 <h1>Кастомные темы для Waterfox</h1>
 <p>Портфолио тем</p>
 </section>
+
+<div class="seller-info-card">
+<div class="seller-top">
+<div class="seller-name">Продавец: <span>MSCblaze</span></div>
+<div class="rating-block">
+<div class="stars">
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+</div>
+<span class="reviews-count">95+ отзывов</span>
+</div>
+</div>
+<div class="seller-desc">
+<p>Настройка тем и интерфейса — дело далеко не из легких и отнимает много времени, именно поэтому стоимость полностью оправдана качеством работы.</p>
+<p>Пожалуйста, не забудьте оставить честный отзыв после успешной покупки!</p>
+</div>
+</div>
 
 <section class="showcase">
 <div class="viewport">
@@ -119,6 +140,7 @@ card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translat
 document.getElementById('lightboxClose').addEventListener('click', () => {
 document.getElementById('lightbox').classList.remove('visible');
 });
+
 document.getElementById('lightbox').addEventListener('click', (e) => {
 if(e.target.id === 'lightbox') {
 document.getElementById('lightbox').classList.remove('visible');
