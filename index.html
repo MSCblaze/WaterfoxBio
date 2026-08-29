@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <input type="checkbox" id="lightbox-toggle" class="lightbox-checkbox">
+    <div class="lightbox-modal">
+        <label for="lightbox-toggle" class="lightbox-overlay"></label>
+        <div class="lightbox-content">
+            <label for="lightbox-toggle" class="lightbox-close">&times;</label>
+            <img src="" id="lightbox-img" alt="Fullscreen View">
+        </div>
+    </div>
     <div class="bg-nebula nebula-1"></div>
     <div class="bg-nebula nebula-2"></div>
-    <div class="bg-nebula nebula-3"></div>
     <main>
         <div class="header-container">
             <h1 class="main-title" id="themeTitle">Monochrome Mountains</h1>
@@ -19,15 +26,21 @@
             <div class="carousel-track-container">
                 <div class="carousel-track" id="track">
                     <div class="card" data-title="Monochrome Mountains">
-                        <img src="assets/one.webp" alt="Monochrome Mountains" onerror="this.remove(); this.parentElement.classList.add('fallback');">
+                        <label for="lightbox-toggle" class="lightbox-trigger">
+                            <img src="assets/one.webp" alt="Monochrome Mountains" onerror="this.remove(); this.parentElement.parentElement.classList.add('fallback');">
+                        </label>
                         <div class="fallback-text">Soon...</div>
                     </div>
                     <div class="card" data-title="Soon...">
-                        <img src="assets/two.webp" alt="Card 2" onerror="this.remove(); this.parentElement.classList.add('fallback');">
+                        <label for="lightbox-toggle" class="lightbox-trigger">
+                            <img src="assets/two.webp" alt="Card 2" onerror="this.remove(); this.parentElement.parentElement.classList.add('fallback');">
+                        </label>
                         <div class="fallback-text">Soon...</div>
                     </div>
                     <div class="card" data-title="Soon...">
-                        <img src="assets/three.webp" alt="Card 3" onerror="this.remove(); this.parentElement.classList.add('fallback');">
+                        <label for="lightbox-toggle" class="lightbox-trigger">
+                            <img src="assets/three.webp" alt="Card 3" onerror="this.remove(); this.parentElement.parentElement.classList.add('fallback');">
+                        </label>
                         <div class="fallback-text">Soon...</div>
                     </div>
                 </div>
@@ -47,6 +60,7 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const themeTitle = document.getElementById('themeTitle');
+        const lightboxImg = document.getElementById('lightbox-img');
         let currentIndex = 0;
         function updateCarousel() {
             cards.forEach((card, index) => {
@@ -54,6 +68,10 @@
                 let diff = index - currentIndex;
                 if (diff === 0) {
                     card.classList.add('active');
+                    const activeImg = card.querySelector('img');
+                    if (activeImg) {
+                        lightboxImg.src = activeImg.src;
+                    }
                 } else if (diff === -1 || (currentIndex === 0 && index === cards.length - 1)) {
                     card.classList.add('left');
                 } else if (diff === 1 || (currentIndex === cards.length - 1 && index === 0)) {
