@@ -3,73 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waterfox Portfolio</title>
+    <title>Waterfox Themes Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="bg-nebula nebula-1"></div>
-    <div class="bg-nebula nebula-2"></div>
-    <div class="bg-nebula nebula-3"></div>
-
-    <input type="radio" name="slider" id="slide1" checked>
-    <input type="radio" name="slider" id="slide2">
-    <input type="radio" name="slider" id="slide3">
-    <input type="checkbox" id="zoom-toggle">
-
-    <div class="click-zones">
-        <div class="zone-left">
-            <label for="slide3" class="to-s3"></label>
-            <label for="slide1" class="to-s1"></label>
-            <label for="slide2" class="to-s2"></label>
-        </div>
-        <div class="zone-right">
-            <label for="slide2" class="to-s2"></label>
-            <label for="slide3" class="to-s3"></label>
-            <label for="slide1" class="to-s1"></label>
-        </div>
-    </div>
+    <header>
+        <div class="logo">Waterfox Studio</div>
+        <button id="theme-toggle">Переключить тему</button>
+    </header>
 
     <main>
-        <div class="header-container">
-            <h1 class="main-title t1">Monochrome Mountains</h1>
-            <h1 class="main-title t2 silver-mode">Soon...</h1>
-            <h1 class="main-title t3 silver-mode">Soon...</h1>
-        </div>
-
-        <div class="carousel-container">
-            <div class="carousel-track">
-                <div class="card c1">
-                    <label for="zoom-toggle" class="zoom-trigger">
-                        <img src="assets/one.webp" alt="">
-                    </label>
-                </div>
-                <div class="card c2 fallback">
-                    <div class="fallback-text">Soon...</div>
-                </div>
-                <div class="card c3 fallback">
-                    <div class="fallback-text">Soon...</div>
-                </div>
-            </div>
-            <div class="nav-visual btn-prev">←</div>
-            <div class="nav-visual btn-next">→</div>
-        </div>
-
-        <section class="instructions-section">
-            <h2 class="section-title">УСТАНОВКА ТЕМЫ</h2>
-            <div class="monolith-card">
-                <p class="monolith-text">Полный гайд и файлы кастомизации выдаются сразу по завершении работы над вашей индивидуальной сборкой. Вы получите закрытый архив и простую пошаговую инструкцию по установке.</p>
-            </div>
+        <section class="hero">
+            <h1>Кастомные темы для Waterfox</h1>
+            <p>Уникальный дизайн, плавные анимации и серебряный стиль</p>
         </section>
 
-        <div class="lightbox">
-            <label for="zoom-toggle" class="close-overlay"></label>
-            <div class="lightbox-content">
-                <label for="zoom-toggle" class="close-btn">×</label>
-                <img src="assets/one.webp" alt="">
+        <section class="roulette-section">
+            <h2>Витрина тем</h2>
+            <div class="roulette-container">
+                <button class="nav-btn prev" id="prevBtn">&lt;</button>
+                <div class="track-wrapper">
+                    <div class="track" id="track">
+                        <div class="card" onclick="openModal('assets/one.webp')">
+                            <img src="assets/one.webp" alt="Theme 1" onerror="this.remove(); this.parentNode.classList.add('empty');">
+                            <div class="empty-text">Soon</div>
+                            <div class="card-title">Тема #1</div>
+                        </div>
+                        <div class="card" onclick="openModal('assets/two.webp')">
+                            <img src="assets/two.webp" alt="Theme 2" onerror="this.remove(); this.parentNode.classList.add('empty');">
+                            <div class="empty-text">Soon</div>
+                            <div class="card-title">Тема #2</div>
+                        </div>
+                        <div class="card" onclick="openModal('assets/three.webp')">
+                            <img src="assets/three.webp" alt="Theme 3" onerror="this.remove(); this.parentNode.classList.add('empty');">
+                            <div class="empty-text">Soon</div>
+                            <div class="card-title">Тема #3</div>
+                        </div>
+                        <div class="card" onclick="openModal('assets/four.webp')">
+                            <img src="assets/four.webp" alt="Theme 4" onerror="this.remove(); this.parentNode.classList.add('empty');">
+                            <div class="empty-text">Soon</div>
+                            <div class="card-title">Тема #4</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="nav-btn next" id="nextBtn">&gt;</button>
             </div>
-        </div>
+        </section>
     </main>
 
+    <div class="modal" id="modal" onclick="closeModal()">
+        <img id="modal-img" src="" alt="Preview">
+    </div>
+
+    <script>
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+
+        const track = document.getElementById('track');
+        let index = 0;
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (index < 3) index++;
+            else index = 0;
+            updateSlider();
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (index > 0) index--;
+            else index = 3;
+            updateSlider();
+        });
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${index * 300}px)`;
+        }
+
+        function openModal(src) {
+            const card = event.currentTarget;
+            if (card.classList.contains('empty')) return;
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = src;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+    </script>
 </body>
 </html>
