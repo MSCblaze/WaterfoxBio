@@ -5,13 +5,13 @@
     --accent-color: #a855f7;
     --accent-glow: rgba(168, 85, 247, 0.5);
     --text-main: #ffffff;
-    --text-muted: #a197b9;
+    --text-muted: #c4b5fd;
     --silver-grad: linear-gradient(180deg, #ffffff 0%, #b0b0b0 45%, #4a4a4a 55%, #d6d6d6 100%);
 }
 
 body.light-theme {
     --bg-main: #f5f2fa;
-    --panel-bg: rgba(255, 255, 255, 0.75);
+    --panel-bg: rgba(255, 255, 255, 0.85);
     --border-color: rgba(147, 51, 234, 0.15);
     --accent-color: #7e22ce;
     --accent-glow: rgba(126, 34, 206, 0.3);
@@ -26,7 +26,7 @@ body.light-theme {
 }
 
 body {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
     min-height: 100vh;
@@ -41,13 +41,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 6%;
+    padding: 24px 5%;
 }
 
 .brand {
     font-family: 'Syncopate', sans-serif;
     font-weight: 800;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     letter-spacing: 2px;
 }
 
@@ -59,10 +59,11 @@ header {
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
     color: var(--text-main);
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 30px;
     font-family: inherit;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 14px;
     cursor: pointer;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
@@ -79,29 +80,30 @@ main {
     z-index: 10;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px 20px 40px;
 }
 
 .intro {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .intro h1 {
     font-family: 'Syncopate', sans-serif;
-    font-size: Clamp(24px, 4vw, 42px);
+    font-size: clamp(20px, 3.5vw, 40px);
     font-weight: 800;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     text-transform: uppercase;
     background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.2;
 }
 
 .intro p {
     color: var(--text-muted);
-    font-size: 16px;
-    font-weight: 500;
+    font-size: clamp(17px, 2vw, 20px);
+    font-weight: 700;
 }
 
 .showcase {
@@ -113,7 +115,7 @@ main {
 .viewport {
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .slider-track {
@@ -179,7 +181,7 @@ main {
 .badge-soon {
     display: none;
     font-family: 'Syncopate', sans-serif;
-    font-size: 54px;
+    font-size: 42px;
     font-weight: 800;
     letter-spacing: 1px;
     background: var(--silver-grad);
@@ -210,7 +212,7 @@ main {
 }
 
 .card-name {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 18px;
 }
 
@@ -219,7 +221,7 @@ main {
     color: var(--accent-color);
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .lightbox {
@@ -243,7 +245,7 @@ main {
 
 .lightbox-wrapper {
     position: relative;
-    max-width: 90vw;
+    max-width: 95vw;
     max-height: 90vh;
 }
 
@@ -273,7 +275,18 @@ main {
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 20px 4%;
+    }
+    .theme-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
     .card-item {
         flex: 0 0 100%;
+    }
+    .lightbox-close {
+        top: -40px;
+        right: 5px;
     }
 }
