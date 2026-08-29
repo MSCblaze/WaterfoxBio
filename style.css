@@ -35,48 +35,6 @@ body {
     position: relative;
 }
 
-.waves-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.6;
-}
-
-.wave {
-    position: absolute;
-    width: 200vw;
-    height: 200vh;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
-    animation: waveAnimation 15s linear infinite;
-}
-
-.wave2 {
-    animation-duration: 22s;
-    animation-direction: reverse;
-    opacity: 0.7;
-}
-
-.wave3 {
-    animation-duration: 30s;
-    opacity: 0.4;
-}
-
-@keyframes waveAnimation {
-    0% {
-        transform: rotate(0deg) translate(0, 0) scale(1);
-    }
-    50% {
-        transform: rotate(180deg) translate(50px, 30px) scale(1.1);
-    }
-    100% {
-        transform: rotate(360deg) translate(0, 0) scale(1);
-    }
-}
-
 header {
     position: relative;
     z-index: 10;
@@ -148,8 +106,8 @@ main {
 
 .showcase {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 .viewport {
@@ -161,11 +119,12 @@ main {
 .slider-track {
     display: flex;
     gap: 24px;
-    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card-item {
-    flex: 0 0 calc((100% - 24px) / 2);
+    flex: 0 0 calc((100% - 48px) / 3);
     perspective: 1000px;
     cursor: pointer;
     transition: transform 0.2s ease-out;
@@ -222,7 +181,7 @@ main {
     font-family: 'Syncopate', sans-serif;
     font-size: 54px;
     font-weight: 800;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     background: var(--silver-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -261,31 +220,6 @@ main {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
-}
-
-.nav-arrow {
-    background: var(--panel-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    font-size: 22px;
-    cursor: pointer;
-    flex-shrink: 0;
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px var(--accent-glow);
-}
-
-.nav-arrow:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    box-shadow: 0 0 25px var(--accent-color);
-    color: #fff;
 }
 
 .lightbox {
@@ -330,6 +264,12 @@ main {
     font-size: 36px;
     color: #fff;
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .card-item {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
 }
 
 @media (max-width: 768px) {
