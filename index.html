@@ -1,219 +1,133 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waterfox Themes Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waterfox Themes Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
 
-    <div class="waves-bg">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-    </div>
+<header>
+<div class="brand">WATERFOX<span>THEMES</span></div>
+<button id="themeToggle" class="theme-btn">Сменить тему</button>
+</header>
 
-    <header>
-        <div class="brand">WATERFOX<span>THEMES</span></div>
-        <button id="themeToggle" class="theme-btn">Сменить тему</button>
-    </header>
+<main>
+<section class="intro">
+<h1>Кастомные темы для Waterfox</h1>
+<p>Портфолио тем</p>
+</section>
 
-    <main>
-        <section class="intro">
-            <h1>Кастомные темы для Waterfox</h1>
-            <p>Портфолио тем</p>
-        </section>
+<section class="showcase">
+<div class="viewport">
+<div class="slider-track" id="sliderTrack">
 
-        <section class="showcase">
-            <button class="nav-arrow prev" id="btnPrev">&larr;</button>
-            
-            <div class="viewport">
-                <div class="slider-track" id="sliderTrack">
+<div class="card-item" data-img="assets/one.webp">
+<div class="card-inner">
+<div class="card-media">
+<div class="glint-effect"></div>
+<span class="badge-soon">SOON</span>
+</div>
+<div class="card-footer">
+<span class="card-name">Тема 01</span>
+<span class="card-status">Preview</span>
+</div>
+</div>
+</div>
 
-                    <div class="card-item" data-img="assets/one.webp">
-                        <div class="card-inner">
-                            <div class="card-media">
-                                <div class="glint-effect"></div>
-                                <span class="badge-soon">SOON</span>
-                            </div>
-                            <div class="card-footer">
-                                <span class="card-name">Тема 01</span>
-                                <span class="card-status">Preview</span>
-                            </div>
-                        </div>
-                    </div>
+<div class="card-item" data-img="assets/two.webp">
+<div class="card-inner">
+<div class="card-media">
+<div class="glint-effect"></div>
+<span class="badge-soon">SOON</span>
+</div>
+<div class="card-footer">
+<span class="card-name">Тема 02</span>
+<span class="card-status">Preview</span>
+</div>
+</div>
+</div>
 
-                    <div class="card-item" data-img="assets/two.webp">
-                        <div class="card-inner">
-                            <div class="card-media">
-                                <div class="glint-effect"></div>
-                                <span class="badge-soon">SOON</span>
-                            </div>
-                            <div class="card-footer">
-                                <span class="card-name">Тема 02</span>
-                                <span class="card-status">Preview</span>
-                            </div>
-                        </div>
-                    </div>
+<div class="card-item" data-img="assets/three.webp">
+<div class="card-inner">
+<div class="card-media">
+<div class="glint-effect"></div>
+<span class="badge-soon">SOON</span>
+</div>
+<div class="card-footer">
+<span class="card-name">Тема 03</span>
+<span class="card-status">Preview</span>
+</div>
+</div>
+</div>
 
-                    <div class="card-item" data-img="assets/three.webp">
-                        <div class="card-inner">
-                            <div class="card-media">
-                                <div class="glint-effect"></div>
-                                <span class="badge-soon">SOON</span>
-                            </div>
-                            <div class="card-footer">
-                                <span class="card-name">Тема 03</span>
-                                <span class="card-status">Preview</span>
-                            </div>
-                        </div>
-                    </div>
+</div>
+</div>
+</section>
+</main>
 
-                    <div class="card-item" data-img="assets/four.webp">
-                        <div class="card-inner">
-                            <div class="card-media">
-                                <div class="glint-effect"></div>
-                                <span class="badge-soon">SOON</span>
-                            </div>
-                            <div class="card-footer">
-                                <span class="card-name">Тема 04</span>
-                                <span class="card-status">Preview</span>
-                            </div>
-                        </div>
-                    </div>
+<div class="lightbox" id="lightbox">
+<div class="lightbox-wrapper">
+<span class="lightbox-close" id="lightboxClose">&times;</span>
+<img id="lightboxImg" src="" alt="Full Preview">
+</div>
+</div>
 
-                    <div class="card-item" data-img="assets/five.webp">
-                        <div class="card-inner">
-                            <div class="card-media">
-                                <div class="glint-effect"></div>
-                                <span class="badge-soon">SOON</span>
-                            </div>
-                            <div class="card-footer">
-                                <span class="card-name">Тема 05</span>
-                                <span class="card-status">Preview</span>
-                            </div>
-                        </div>
-                    </div>
+<script>
+const cards = document.querySelectorAll('.card-item');
 
-                </div>
-            </div>
+cards.forEach(card => {
+const imgPath = card.getAttribute('data-img');
+const mediaBox = card.querySelector('.card-media');
 
-            <button class="nav-arrow next" id="btnNext">&rarr;</button>
-        </section>
-    </main>
+const testImg = new Image();
+testImg.onload = () => {
+mediaBox.style.backgroundImage = `url('${imgPath}')`;
+card.classList.add('has-image');
+};
+testImg.onerror = () => {
+card.classList.add('is-empty');
+};
+testImg.src = imgPath;
 
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-wrapper">
-            <span class="lightbox-close" id="lightboxClose">&times;</span>
-            <img id="lightboxImg" src="" alt="Full Preview">
-        </div>
-    </div>
+card.addEventListener('click', () => {
+if (card.classList.contains('has-image')) {
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightboxImg');
+lbImg.src = imgPath;
+lb.classList.add('visible');
+}
+});
 
-    <script>
-        const cards = document.querySelectorAll('.card-item');
+card.addEventListener('mousemove', (e) => {
+const rect = card.getBoundingClientRect();
+const x = e.clientX - rect.left - rect.width / 2;
+const y = e.clientY - rect.top - rect.height / 2;
+card.style.transform = `perspective(1000px) rotateY(${x / 20}deg) rotateX(${-y / 20}deg) translateY(-8px)`;
+});
 
-        cards.forEach(card => {
-            const imgPath = card.getAttribute('data-img');
-            const mediaBox = card.querySelector('.card-media');
+card.addEventListener('mouseleave', () => {
+card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)';
+});
+});
 
-            const testImg = new Image();
-            testImg.onload = () => {
-                mediaBox.style.backgroundImage = `url('${imgPath}')`;
-                card.classList.add('has-image');
-            };
-            testImg.onerror = () => {
-                card.classList.add('is-empty');
-            };
-            testImg.src = imgPath;
+document.getElementById('lightboxClose').addEventListener('click', () => {
+document.getElementById('lightbox').classList.remove('visible');
+});
+document.getElementById('lightbox').addEventListener('click', (e) => {
+if(e.target.id === 'lightbox') {
+document.getElementById('lightbox').classList.remove('visible');
+}
+});
 
-            card.addEventListener('click', () => {
-                if (card.classList.contains('has-image')) {
-                    const lb = document.getElementById('lightbox');
-                    const lbImg = document.getElementById('lightboxImg');
-                    lbImg.src = imgPath;
-                    lb.classList.add('visible');
-                }
-            });
-
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                card.style.transform = `perspective(1000px) rotateY(${x / 20}deg) rotateX(${-y / 20}deg) translateY(-8px)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)';
-            });
-        });
-
-        document.getElementById('lightboxClose').addEventListener('click', () => {
-            document.getElementById('lightbox').classList.remove('visible');
-        });
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if(e.target.id === 'lightbox') {
-                document.getElementById('lightbox').classList.remove('visible');
-            }
-        });
-
-        const track = document.getElementById('sliderTrack');
-        const prev = document.getElementById('btnPrev');
-        const next = document.getElementById('btnNext');
-        let index = 0;
-
-        function getVisibleCount() {
-            if (window.innerWidth < 768) return 1;
-            return 2;
-        }
-
-        function slide() {
-            const total = cards.length;
-            const visible = getVisibleCount();
-            const maxIndex = total - visible;
-
-            if (index > maxIndex) index = 0;
-            if (index < 0) index = maxIndex < 0 ? 0 : maxIndex;
-
-            const cardWidth = cards[0].offsetWidth + 24;
-            track.style.transform = `translateX(-${index * cardWidth}px)`;
-        }
-
-        next.addEventListener('click', () => {
-            const total = cards.length;
-            const visible = getVisibleCount();
-            const maxIndex = total - visible;
-            
-            if (index < maxIndex) {
-                index++;
-            } else {
-                index = 0;
-            }
-            slide();
-        });
-
-        prev.addEventListener('click', () => {
-            const total = cards.length;
-            const visible = getVisibleCount();
-            const maxIndex = total - visible;
-
-            if (index > 0) {
-                index--;
-            } else {
-                index = maxIndex < 0 ? 0 : maxIndex;
-            }
-            slide();
-        });
-
-        window.addEventListener('resize', slide);
-
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            document.body.classList.toggle('light-theme');
-        });
-    </script>
+document.getElementById('themeToggle').addEventListener('click', () => {
+document.body.classList.toggle('dark-theme');
+document.body.classList.toggle('light-theme');
+});
+</script>
 </body>
 </html>
