@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">PORTFOLIO</div>
+    </header>
+
+    <main class="container">
+        <section class="carousel-section">
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="track">
+                    <div class="slide">
+                        <img src="assets/one.png" alt="Work 1">
+                    </div>
+                    <div class="slide">
+                        <img src="assets/two.png" alt="Work 2">
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="btn" id="prevBtn" aria-label="Previous">&larr;</button>
+                <button class="btn" id="nextBtn" aria-label="Next">&rarr;</button>
+            </div>
+        </section>
+
+        <section class="instructions">
+            <h2 class="section-title">Установка темы</h2>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <div class="step-content">
+                        <h3>Скачивание</h3>
+                        <p>Загрузите архив с файлами темы из официального репозитория на ваш компьютер.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">02</span>
+                    <div class="step-content">
+                        <h3>Настройки браузера</h3>
+                        <p>Откройте браузер, перейдите в раздел расширений и включите режим разработчика.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">03</span>
+                    <div class="step-content">
+                        <h3>Импорт</h3>
+                        <p>Перетащите распакованную папку в окно браузера для завершения установки.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const track = document.getElementById('track');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let index = 0;
+
+        function updateSlider() {
+            if (index === 0) {
+                track.style.transform = 'translateX(0)';
+            } else {
+                track.style.transform = 'translateX(calc(-65% - 20px))';
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (index < 1) {
+                index++;
+                updateSlider();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (index > 0) {
+                index--;
+                updateSlider();
+            }
+        });
+    </script>
+</body>
+</html>
