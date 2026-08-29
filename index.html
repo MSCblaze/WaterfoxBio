@@ -3,61 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waterfox Custom</title>
+    <title>Waterfox Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <div class="bg-nebula nebula-1"></div>
+    <div class="bg-nebula nebula-2"></div>
+    <div class="bg-nebula nebula-3"></div>
 
-    <div class="wrapper">
-        <input type="radio" name="gallery" id="tab1" checked>
-        <input type="radio" name="gallery" id="tab2">
-        <input type="radio" name="gallery" id="tab3">
-
+    <main>
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
         <input type="checkbox" id="zoom-toggle">
 
-        <div class="titles-container">
-            <h1 class="title t1">Monochrome Mountains</h1>
-            <h1 class="title t2">Soon...</h1>
-            <h1 class="title t3">Soon...</h1>
+        <div class="header-container">
+            <h1 class="main-title t1">Monochrome Mountains</h1>
+            <h1 class="main-title t2 silver-mode">Soon...</h1>
+            <h1 class="main-title t3 silver-mode">Soon...</h1>
         </div>
 
-        <div class="main-stage">
-            <div class="carousel">
-                <div class="card c1">
-                    <label for="zoom-toggle" class="zoom-trigger">
-                        <img src="assets/one.webp" alt="">
-                    </label>
-                </div>
-                <div class="card c2">
-                    <span>Soon...</span>
-                </div>
-                <div class="card c3">
-                    <span>Soon...</span>
+        <div class="carousel-container">
+            <div class="carousel-track-container">
+                <div class="carousel-track">
+                    <div class="card c1">
+                        <label for="zoom-toggle" class="zoom-trigger">
+                            <img src="assets/one.webp" alt="">
+                        </label>
+                    </div>
+                    <div class="card c2 fallback">
+                        <div class="fallback-text">Soon...</div>
+                    </div>
+                    <div class="card c3 fallback">
+                        <div class="fallback-text">Soon...</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="nav-arrows">
-                <div class="arrow-box prev-box">
-                    <label for="tab3" class="to-t3">←</label>
-                    <label for="tab1" class="to-t1">←</label>
-                    <label for="tab2" class="to-t2">←</label>
-                </div>
-                <div class="arrow-box next-box">
-                    <label for="tab2" class="to-t2">→</label>
-                    <label for="tab3" class="to-t3">→</label>
-                    <label for="tab1" class="to-t1">→</label>
-                </div>
+            <div class="nav-btn prev">
+                <label for="slide3" class="to-s3">←</label>
+                <label for="slide1" class="to-s1">←</label>
+                <label for="slide2" class="to-s2">←</label>
+            </div>
+            <div class="nav-btn next">
+                <label for="slide2" class="to-s2">→</label>
+                <label for="slide3" class="to-s3">→</label>
+                <label for="slide1" class="to-s1">→</label>
             </div>
         </div>
 
-        <div class="info-section">
-            <h2>УСТАНОВКА ТЕМЫ</h2>
-            <div class="info-box">
-                <p>Полный гайд и файлы кастомизации выдаются сразу по завершении работы над вашей индивидуальной сборкой. Вы получите закрытый архив и простую пошаговую инструкцию по установке.</p>
+        <section class="instructions-section">
+            <h2 class="section-title">УСТАНОВКА ТЕМЫ</h2>
+            <div class="monolith-card">
+                <p class="monolith-text">Полный гайд и файлы кастомизации выдаются сразу по завершении работы над вашей индивидуальной сборкой. Вы получите закрытый архив и простую пошаговую инструкцию по установке.</p>
             </div>
-        </div>
+        </section>
 
         <div class="lightbox">
             <label for="zoom-toggle" class="close-overlay"></label>
@@ -66,7 +67,7 @@
                 <img src="assets/one.webp" alt="">
             </div>
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
