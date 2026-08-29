@@ -3,177 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waterfox Studio — Темы</title>
+    <title>Waterfox Themes Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark">
+<body class="dark-theme">
+
+    <div class="bg-glow"></div>
 
     <header>
-        <div class="logo">Waterfox <span>Studio</span></div>
-        <button id="theme-toggle" class="btn-theme">Сменить тему</button>
+        <div class="brand">WATERFOX<span>THEMES</span></div>
+        <button id="themeToggle" class="theme-btn">Сменить тему</button>
     </header>
 
-    <main class="container">
-        <section class="hero">
+    <main>
+        <section class="intro">
             <h1>Кастомные темы для Waterfox</h1>
-            <p>Уникальный интерфейс, неоновая эстетика и детализация</p>
+            <p>Эксклюзивный интерфейс, динамика и серебряный стиль</p>
         </section>
 
-        <section class="roulette-section">
-            <h2>Витрина работ</h2>
-            <div class="carousel">
-                <button class="nav-btn prev" id="prevBtn">&larr;</button>
+        <section class="showcase">
+            <button class="nav-arrow prev" id="btnPrev">&larr;</button>
+            
+            <div class="viewport">
+                <div class="slider-track" id="sliderTrack">
 
-                <div class="track-wrapper">
-                    <div class="track" id="track">
-                        
-                        <div class="card" data-src="assets/one.webp">
-                            <div class="img-wrapper">
-                                <img src="assets/one.webp" alt="Тема 1">
-                                <span class="soon-text">SOON</span>
+                    <div class="card-item" data-img="assets/one.webp">
+                        <div class="card-inner">
+                            <div class="card-media">
+                                <span class="badge-soon">SOON</span>
                             </div>
-                            <div class="card-info">
-                                <span class="card-title">Тема #1</span>
+                            <div class="card-footer">
+                                <span class="card-name">Тема 01</span>
+                                <span class="card-status">Preview</span>
                             </div>
                         </div>
-
-                        <div class="card" data-src="assets/two.webp">
-                            <div class="img-wrapper">
-                                <img src="assets/two.webp" alt="Тема 2">
-                                <span class="soon-text">SOON</span>
-                            </div>
-                            <div class="card-info">
-                                <span class="card-title">Тема #2</span>
-                            </div>
-                        </div>
-
-                        <div class="card" data-src="assets/three.webp">
-                            <div class="img-wrapper">
-                                <img src="assets/three.webp" alt="Тема 3">
-                                <span class="soon-text">SOON</span>
-                            </div>
-                            <div class="card-info">
-                                <span class="card-title">Тема #3</span>
-                            </div>
-                        </div>
-
-                        <div class="card" data-src="assets/four.webp">
-                            <div class="img-wrapper">
-                                <img src="assets/four.webp" alt="Тема 4">
-                                <span class="soon-text">SOON</span>
-                            </div>
-                            <div class="card-info">
-                                <span class="card-title">Тема #4</span>
-                            </div>
-                        </div>
-
-                        <div class="card" data-src="assets/five.webp">
-                            <div class="img-wrapper">
-                                <img src="assets/five.webp" alt="Тема 5">
-                                <span class="soon-text">SOON</span>
-                            </div>
-                            <div class="card-info">
-                                <span class="card-title">Тема #5</span>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
 
-                <button class="nav-btn next" id="nextBtn">&rarr;</button>
+                    <div class="card-item" data-img="assets/two.webp">
+                        <div class="card-inner">
+                            <div class="card-media">
+                                <span class="badge-soon">SOON</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-name">Тема 02</span>
+                                <span class="card-status">Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-item" data-img="assets/three.webp">
+                        <div class="card-inner">
+                            <div class="card-media">
+                                <span class="badge-soon">SOON</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-name">Тема 03</span>
+                                <span class="card-status">Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-item" data-img="assets/four.webp">
+                        <div class="card-inner">
+                            <div class="card-media">
+                                <span class="badge-soon">SOON</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-name">Тема 04</span>
+                                <span class="card-status">Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-item" data-img="assets/five.webp">
+                        <div class="card-inner">
+                            <div class="card-media">
+                                <span class="badge-soon">SOON</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-name">Тема 05</span>
+                                <span class="card-status">Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
+            <button class="nav-arrow next" id="btnNext">&rarr;</button>
         </section>
     </main>
 
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <img id="modal-img" src="" alt="Full Preview">
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-wrapper">
+            <span class="lightbox-close" id="lightboxClose">&times;</span>
+            <img id="lightboxImg" src="" alt="Full Preview">
         </div>
     </div>
 
     <script>
-        document.querySelectorAll('.card').forEach(card => {
-            const img = card.querySelector('img');
-            const src = card.getAttribute('data-src');
+        const cards = document.querySelectorAll('.card-item');
 
-            img.onerror = () => {
+        cards.forEach(card => {
+            const imgPath = card.getAttribute('data-img');
+            const mediaBox = card.querySelector('.card-media');
+
+            const testImg = new Image();
+            testImg.onload = () => {
+                mediaBox.style.backgroundImage = `url('${imgPath}')`;
+                card.classList.add('has-image');
+            };
+            testImg.onerror = () => {
                 card.classList.add('is-empty');
             };
+            testImg.src = imgPath;
 
             card.addEventListener('click', () => {
-                if (!card.classList.contains('is-empty')) {
-                    const modal = document.getElementById('modal');
-                    const modalImg = document.getElementById('modal-img');
-                    modalImg.src = src;
-                    modal.classList.add('active');
+                if (card.classList.contains('has-image')) {
+                    const lb = document.getElementById('lightbox');
+                    const lbImg = document.getElementById('lightboxImg');
+                    lbImg.src = imgPath;
+                    lb.classList.add('visible');
                 }
+            });
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                card.style.transform = `perspective(1000px) rotateY(${x / 20}deg) rotateX(${-y / 20}deg) translateY(-8px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)';
             });
         });
 
-        document.getElementById('closeModal').addEventListener('click', () => {
-            document.getElementById('modal').classList.remove('active');
+        document.getElementById('lightboxClose').addEventListener('click', () => {
+            document.getElementById('lightbox').classList.remove('visible');
         });
-
-        document.getElementById('modal').addEventListener('click', (e) => {
-            if (e.target.id === 'modal') {
-                document.getElementById('modal').classList.remove('active');
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if(e.target.id === 'lightbox') {
+                document.getElementById('lightbox').classList.remove('visible');
             }
         });
 
-        const track = document.getElementById('track');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentIndex = 0;
+        const track = document.getElementById('sliderTrack');
+        const prev = document.getElementById('btnPrev');
+        const next = document.getElementById('btnNext');
+        let index = 0;
 
-        function getVisibleCards() {
-            const wrapperWidth = document.querySelector('.track-wrapper').clientWidth;
-            if (wrapperWidth < 600) return 1;
-            if (wrapperWidth < 900) return 2;
-            return 3;
+        function getVisibleCount() {
+            if (window.innerWidth < 768) return 1;
+            return 2;
         }
 
-        function updateSlider() {
-            const cards = document.querySelectorAll('.card');
+        function slide() {
+            const total = cards.length;
+            const visible = getVisibleCount();
+            const maxIndex = total - visible;
+
+            if (index > maxIndex) index = 0;
+            if (index < 0) index = maxIndex < 0 ? 0 : maxIndex;
+
             const cardWidth = cards[0].offsetWidth + 24;
-            const maxIndex = cards.length - getVisibleCards();
-            
-            if (currentIndex > maxIndex) currentIndex = maxIndex;
-            if (currentIndex < 0) currentIndex = 0;
-
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            track.style.transform = `translateX(-${index * cardWidth}px)`;
         }
 
-        nextBtn.addEventListener('click', () => {
-            const cards = document.querySelectorAll('.card');
-            const maxIndex = cards.length - getVisibleCards();
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
-            updateSlider();
+        next.addEventListener('click', () => {
+            index++;
+            slide();
         });
 
-        prevBtn.addEventListener('click', () => {
-            const cards = document.querySelectorAll('.card');
-            const maxIndex = cards.length - getVisibleCards();
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = maxIndex;
-            }
-            updateSlider();
+        prev.addEventListener('click', () => {
+            index--;
+            slide();
         });
 
-        window.addEventListener('resize', updateSlider);
+        window.addEventListener('resize', slide);
 
-        document.getElementById('theme-toggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            document.body.classList.toggle('light');
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('light-theme');
         });
     </script>
 </body>
