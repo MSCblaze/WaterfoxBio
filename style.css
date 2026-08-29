@@ -1,9 +1,9 @@
 :root {
     --bg-main: #090510;
-    --panel-bg: rgba(20, 12, 38, 0.6);
+    --panel-bg: rgba(20, 12, 38, 0.65);
     --border-color: rgba(147, 51, 234, 0.25);
     --accent-color: #a855f7;
-    --accent-glow: rgba(168, 85, 247, 0.4);
+    --accent-glow: rgba(168, 85, 247, 0.5);
     --text-main: #ffffff;
     --text-muted: #a197b9;
     --silver-grad: linear-gradient(180deg, #ffffff 0%, #b0b0b0 45%, #4a4a4a 55%, #d6d6d6 100%);
@@ -11,10 +11,10 @@
 
 body.light-theme {
     --bg-main: #f5f2fa;
-    --panel-bg: rgba(255, 255, 255, 0.7);
+    --panel-bg: rgba(255, 255, 255, 0.75);
     --border-color: rgba(147, 51, 234, 0.15);
     --accent-color: #7e22ce;
-    --accent-glow: rgba(126, 34, 206, 0.2);
+    --accent-glow: rgba(126, 34, 206, 0.3);
     --text-main: #18092b;
     --text-muted: #6b5c85;
 }
@@ -35,16 +35,46 @@ body {
     position: relative;
 }
 
-.bg-glow {
+.waves-bg {
     position: fixed;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    pointer-events: none;
+    inset: 0;
     z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.wave {
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    animation: waveAnimation 15s linear infinite;
+}
+
+.wave2 {
+    animation-duration: 22s;
+    animation-direction: reverse;
+    opacity: 0.7;
+}
+
+.wave3 {
+    animation-duration: 30s;
+    opacity: 0.4;
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: rotate(0deg) translate(0, 0) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) translate(50px, 30px) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) translate(0, 0) scale(1);
+    }
 }
 
 header {
@@ -78,11 +108,12 @@ header {
     cursor: pointer;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 .theme-btn:hover {
     border-color: var(--accent-color);
-    box-shadow: 0 0 20px var(--accent-glow);
+    box-shadow: 0 0 25px var(--accent-color);
 }
 
 main {
@@ -112,6 +143,7 @@ main {
 .intro p {
     color: var(--text-muted);
     font-size: 16px;
+    font-weight: 500;
 }
 
 .showcase {
@@ -145,7 +177,12 @@ main {
     border-radius: 20px;
     overflow: hidden;
     backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 20px var(--accent-glow);
+    transition: box-shadow 0.3s ease;
+}
+
+.card-inner:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px var(--accent-color);
 }
 
 .card-media {
@@ -159,6 +196,25 @@ main {
     justify-content: center;
     position: relative;
     background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.glint-effect {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: glintMove 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glintMove {
+    0% { left: -150%; }
+    20% { left: 150%; }
+    100% { left: 150%; }
 }
 
 .badge-soon {
@@ -175,6 +231,10 @@ main {
 
 .card-item.is-empty .badge-soon {
     display: block;
+}
+
+.card-item.is-empty .glint-effect {
+    display: none;
 }
 
 .card-item.is-empty {
@@ -214,13 +274,17 @@ main {
     cursor: pointer;
     flex-shrink: 0;
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 .nav-arrow:hover {
     background: var(--accent-color);
     border-color: var(--accent-color);
-    box-shadow: 0 0 25px var(--accent-glow);
+    box-shadow: 0 0 25px var(--accent-color);
     color: #fff;
 }
 
