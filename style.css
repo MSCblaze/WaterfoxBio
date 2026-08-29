@@ -9,16 +9,6 @@
     --silver-grad: linear-gradient(180deg, #ffffff 0%, #b0b0b0 45%, #4a4a4a 55%, #d6d6d6 100%);
 }
 
-body.light-theme {
-    --bg-main: #f5f2fa;
-    --panel-bg: rgba(255, 255, 255, 0.85);
-    --border-color: rgba(147, 51, 234, 0.15);
-    --accent-color: #7e22ce;
-    --accent-glow: rgba(126, 34, 206, 0.3);
-    --text-main: #18092b;
-    --text-muted: #6b5c85;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,7 +21,6 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
-    transition: background-color 0.4s ease, color 0.4s ease;
     position: relative;
 }
 
@@ -53,26 +42,6 @@ header {
 
 .brand span {
     color: var(--accent-color);
-}
-
-.theme-btn {
-    background: var(--panel-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-family: inherit;
-    font-weight: 800;
-    font-size: 14px;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px var(--accent-glow);
-}
-
-.theme-btn:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 25px var(--accent-color);
 }
 
 main {
@@ -114,19 +83,19 @@ main {
 
 .viewport {
     width: 100%;
-    overflow: hidden;
-    padding: 10px 0;
+    /* Убрано overflow: hidden, чтобы свечение карточек могло выходить за границы */
+    padding: 30px 20px; /* Добавлен внутренний отступ, чтобы тени не прижимались к краям экрана */
 }
 
 .slider-track {
     display: flex;
-    gap: 24px;
+    gap: 30px; /* Чуть увеличили отступ между карточками под разросшееся свечение */
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .card-item {
-    flex: 0 0 calc((100% - 48px) / 3);
+    flex: 0 0 calc((100% - 60px) / 3);
     perspective: 1000px;
     cursor: pointer;
     transition: transform 0.2s ease-out;
@@ -136,14 +105,14 @@ main {
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden убран отсюда, чтобы тень наружу не обрезалась */
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 20px var(--accent-glow);
     transition: box-shadow 0.3s ease;
 }
 
 .card-inner:hover {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px var(--accent-color);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 35px var(--accent-color);
 }
 
 .card-media {
@@ -157,7 +126,9 @@ main {
     justify-content: center;
     position: relative;
     background-color: rgba(0,0,0,0.2);
-    overflow: hidden;
+    overflow: hidden; /* Оставляем только здесь, чтобы картинка или glint-effect не вылезали за скругленные углы */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .glint-effect {
@@ -209,6 +180,8 @@ main {
     padding: 18px 24px;
     border-top: 1px solid var(--border-color);
     background: rgba(0,0,0,0.15);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .card-name {
@@ -270,17 +243,13 @@ main {
 
 @media (max-width: 1024px) {
     .card-item {
-        flex: 0 0 calc((100% - 24px) / 2);
+        flex: 0 0 calc((100% - 30px) / 2);
     }
 }
 
 @media (max-width: 768px) {
     header {
         padding: 20px 4%;
-    }
-    .theme-btn {
-        padding: 8px 14px;
-        font-size: 12px;
     }
     .card-item {
         flex: 0 0 100%;
