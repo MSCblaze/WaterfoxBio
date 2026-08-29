@@ -54,14 +54,14 @@ main {
 
 .intro {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .intro h1 {
     font-family: 'Syncopate', sans-serif;
     font-size: clamp(20px, 3.5vw, 40px);
     font-weight: 800;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
     -webkit-background-clip: text;
@@ -71,8 +71,76 @@ main {
 
 .intro p {
     color: var(--text-muted);
-    font-size: clamp(17px, 2vw, 20px);
+    font-size: clamp(16px, 1.8vw, 18px);
     font-weight: 700;
+}
+
+.seller-info-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px 30px;
+    margin-bottom: 35px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 25px var(--accent-glow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.seller-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.seller-name {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.seller-name span {
+    color: var(--accent-color);
+}
+
+.rating-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background: #fbbf24;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.6));
+}
+
+.reviews-count {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+.seller-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.seller-desc p + p {
+    margin-top: 8px;
 }
 
 .showcase {
@@ -83,13 +151,12 @@ main {
 
 .viewport {
     width: 100%;
-    /* Убрано overflow: hidden, чтобы свечение карточек могло выходить за границы */
-    padding: 30px 20px; /* Добавлен внутренний отступ, чтобы тени не прижимались к краям экрана */
+    padding: 20px 20px;
 }
 
 .slider-track {
     display: flex;
-    gap: 30px; /* Чуть увеличили отступ между карточками под разросшееся свечение */
+    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -105,7 +172,6 @@ main {
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    /* overflow: hidden убран отсюда, чтобы тень наружу не обрезалась */
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 20px var(--accent-glow);
     transition: box-shadow 0.3s ease;
@@ -126,7 +192,7 @@ main {
     justify-content: center;
     position: relative;
     background-color: rgba(0,0,0,0.2);
-    overflow: hidden; /* Оставляем только здесь, чтобы картинка или glint-effect не вылезали за скругленные углы */
+    overflow: hidden;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
