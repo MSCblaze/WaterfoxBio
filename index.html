@@ -12,12 +12,25 @@
     <div class="bg-nebula nebula-2"></div>
     <div class="bg-nebula nebula-3"></div>
 
-    <main>
-        <input type="radio" name="slider" id="slide1" checked>
-        <input type="radio" name="slider" id="slide2">
-        <input type="radio" name="slider" id="slide3">
-        <input type="checkbox" id="zoom-toggle">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="checkbox" id="zoom-toggle">
 
+    <div class="click-zones">
+        <div class="zone-left">
+            <label for="slide3" class="to-s3"></label>
+            <label for="slide1" class="to-s1"></label>
+            <label for="slide2" class="to-s2"></label>
+        </div>
+        <div class="zone-right">
+            <label for="slide2" class="to-s2"></label>
+            <label for="slide3" class="to-s3"></label>
+            <label for="slide1" class="to-s1"></label>
+        </div>
+    </div>
+
+    <main>
         <div class="header-container">
             <h1 class="main-title t1">Monochrome Mountains</h1>
             <h1 class="main-title t2 silver-mode">Soon...</h1>
@@ -25,32 +38,21 @@
         </div>
 
         <div class="carousel-container">
-            <div class="carousel-track-container">
-                <div class="carousel-track">
-                    <div class="card c1">
-                        <label for="zoom-toggle" class="zoom-trigger">
-                            <img src="assets/one.webp" alt="">
-                        </label>
-                    </div>
-                    <div class="card c2 fallback">
-                        <div class="fallback-text">Soon...</div>
-                    </div>
-                    <div class="card c3 fallback">
-                        <div class="fallback-text">Soon...</div>
-                    </div>
+            <div class="carousel-track">
+                <div class="card c1">
+                    <label for="zoom-toggle" class="zoom-trigger">
+                        <img src="assets/one.webp" alt="">
+                    </label>
+                </div>
+                <div class="card c2 fallback">
+                    <div class="fallback-text">Soon...</div>
+                </div>
+                <div class="card c3 fallback">
+                    <div class="fallback-text">Soon...</div>
                 </div>
             </div>
-
-            <div class="nav-btn prev">
-                <label for="slide3" class="to-s3">←</label>
-                <label for="slide1" class="to-s1">←</label>
-                <label for="slide2" class="to-s2">←</label>
-            </div>
-            <div class="nav-btn next">
-                <label for="slide2" class="to-s2">→</label>
-                <label for="slide3" class="to-s3">→</label>
-                <label for="slide1" class="to-s1">→</label>
-            </div>
+            <div class="nav-visual btn-prev">←</div>
+            <div class="nav-visual btn-next">→</div>
         </div>
 
         <section class="instructions-section">
